@@ -1,15 +1,15 @@
 from setuptools.command.install import install
 from setuptools import setup, find_packages
 import setuptools
-import subprocess
-import os
+# import subprocess
+# import os
 
-class InstallCommand(install):
-    def run(self):
-        install.run(self)
-        current_dir_path = os.path.dirname(os.path.realpath(__file__))
-        create_service_script_path = os.path.join(current_dir_path, 'setup.sh')
-        subprocess.check_output([create_service_script_path])
+# class InstallCommand(install):
+#     def run(self):
+#         install.run(self)
+#         current_dir_path = os.path.dirname(os.path.realpath(__file__))
+#         create_service_script_path = os.path.join(current_dir_path, 'setup.sh')
+#         subprocess.check_output([create_service_script_path])
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -33,5 +33,5 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    cmdclass={'install': InstallCommand}
+    # cmdclass={'install': InstallCommand}
 )
